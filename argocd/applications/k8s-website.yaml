@@ -1,4 +1,4 @@
-apiVersion: argoproject.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: k8s-website
@@ -16,4 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      
