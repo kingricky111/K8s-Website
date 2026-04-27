@@ -2,7 +2,7 @@
 
 README.md
 
-# Kubernetes Portfolio Website (GitOps Deployment)
+# Kubernetes Portfolio Website 
 This project is my personal portfolio website which was deployed on azure and now is deployed on a self-managed Kubernetes cluster using a GitOps workflow with Argo CD.
 
 ---
