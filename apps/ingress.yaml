@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-website-ingress
+  namespace: website
+  labels:
+    app: k8s-website
+  annotations:
+    cert-manager.io/cluster-issuer: "homelab-ca"
+spec:
+  rules:
+  - host: www.rickycloudresume.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: k8s-website-service
+            port:
+              number: 80
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - www.rickycloudresume.com
+    secretName: k8s-website-tls
+  

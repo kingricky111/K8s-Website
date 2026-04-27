@@ -1,0 +1,9 @@
+.git
+.Ds_Store
+.idea
+.vscode
+*.log
+*.tmp
+.env
+.env.*
+secrets.yaml

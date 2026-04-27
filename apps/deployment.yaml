@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-website
+  namespace: website
+  labels:
+    app: k8s-website
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: k8s-website
+  template:
+    metadata:
+      labels:
+        app: k8s-website
+    spec:
+      containers:
+      - name: k8s-website
+        image: kingricky111/k8s-website:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+
