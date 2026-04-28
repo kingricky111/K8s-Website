@@ -19,8 +19,7 @@ This project is my personal portfolio website which was deployed on azure and no
 ---
 ##  Architecture
 
-User → Cloudflare DNS → Public WAN IP → Router Port Forwarding
-→ Ingress Controller → Kubernetes Service → Pod (Nginx)
+[Architecture Diagram](assets/website.png)
 
 ---
 ##  Tech Stack
@@ -34,17 +33,33 @@ User → Cloudflare DNS → Public WAN IP → Router Port Forwarding
 ---
 ##  Repository Structure
 
+
+
+```text
+
 k8s-website/
+
 ├── apps/
+
 │   ├── deployment.yaml
+
 │   ├── service.yaml
+
 │   ├── ingress.yaml
+
 │   ├── namespace.yaml
+
 │   └── kustomization.yaml
+
 ├── argocd/
+
 │   └── applications/
+
 │       └── k8s-website.yaml
 
+├── Dockerfile
+
+└── README.md
 ---
 ##  Deployment Flow (GitOps)
 1. Update application image
