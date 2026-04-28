@@ -19,7 +19,7 @@ This project is my personal portfolio website which was deployed on azure and no
 ---
 ##  Architecture
 
-[Architecture Diagram](assets/website.png)
+![Architecture Diagram](assets/website.png)
 
 ---
 ##  Tech Stack
@@ -32,8 +32,6 @@ This project is my personal portfolio website which was deployed on azure and no
 - Prometheus & Grafana
 ---
 ##  Repository Structure
-
-
 
 ```text
 
@@ -60,6 +58,8 @@ k8s-website/
 ├── Dockerfile
 
 └── README.md
+
+```
 ---
 ##  Deployment Flow (GitOps)
 1. Update application image
