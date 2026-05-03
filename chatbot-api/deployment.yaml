@@ -21,6 +21,12 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: k8s-chatbot-api-secret
+              key: OPENAI_API_KEY
         resources:  
           limits:
             memory: "128Mi"
