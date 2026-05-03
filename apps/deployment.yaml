@@ -17,10 +17,16 @@ spec:
     spec:
       containers:
       - name: k8s-website
-        image: kingricky111/k8s-frontend:v2
+        image: kingricky111/k8s-frontend:v3
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: k8s-chatbot-api-secret
+              key: OPENAI_API_KEY
         resources:
           limits:
             memory: "128Mi"

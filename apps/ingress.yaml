@@ -19,6 +19,13 @@ spec:
             name: k8s-website-service
             port:
               number: 80
+      - path: /chatbot-api
+        pathType: Prefix
+        backend:
+          service:
+            name: k8s-chatbot-api-service
+            port:
+              number: 80
   ingressClassName: nginx
   tls:
   - hosts:
