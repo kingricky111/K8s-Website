@@ -6,8 +6,13 @@ metadata:
   labels:
     app: k8s-website
   annotations:
-    cert-manager.io/cluster-issuer: "homelab-ca"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - www.rickycloudresume.com
+    secretName: k8s-website-letsencrypt-tls
   rules:
   - host: www.rickycloudresume.com
     http:
@@ -26,9 +31,3 @@ spec:
             name: k8s-chatbot-api-service
             port:
               number: 80
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - www.rickycloudresume.com
-    secretName: k8s-website-tls
-  
