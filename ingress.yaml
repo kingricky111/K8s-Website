@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-website-ingress
+  namespace: website
+  labels:
+    app: k8s-website
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - www.rickycloudresume.com
+    secretName: k8s-website-letsencrypt-tls
+  rules:
+  - host: www.rickycloudresume.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: k8s-website-service
+            port:
+              number: 80
+      - path: /chatbot-api
+        pathType: Prefix
+        backend:
+          service:
+            name: k8s-chatbot-api-service
+            port:
+              number: 80
