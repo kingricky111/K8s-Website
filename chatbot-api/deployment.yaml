@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: k8s-chatbot-api
-        image: kingricky111/website-chatbot-api:v3
+        image: kingricky111/website-chatbot-api:v4
         imagePullPolicy: Always
         ports:
         - containerPort: 80
