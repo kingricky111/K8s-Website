@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: k8s-website
-        image: kingricky111/k8s-frontend:v6
+        image: kingricky111/k8s-frontend:v6.1
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
